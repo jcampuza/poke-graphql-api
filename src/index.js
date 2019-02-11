@@ -24,11 +24,15 @@ const typeDefs = gql`
     fairy
   }
 
-  type Pokemon {
-    id: ID!
-    name: String!
-    weight: Int!
-    types: [PokemonType]
+  type SpriteMap {
+    back_default: String
+    back_female: String
+    back_shiny: String
+    back_shiny_female: String
+    front_default: String
+    front_female: String
+    front_shiny: String
+    front_shiny_female: String
   }
 
   type PokemonType {
@@ -41,9 +45,12 @@ const typeDefs = gql`
     url: String!
   }
 
-  input PokemonQueryInput {
-    limit: Int
-    offset: Int
+  type Pokemon {
+    id: ID!
+    name: String!
+    weight: Int!
+    types: [PokemonType]
+    sprites: SpriteMap
   }
 
   type Query {
