@@ -66,6 +66,8 @@ async function start() {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    introspection: true,
+    playground: true,
     context: () => ({ pokemonService: new PokemonService(pokemon) })
   });
 
